@@ -20,7 +20,7 @@ function App() {
     eachCountry.name.common.toLowerCase().includes(countrySearch.toLowerCase()))
     .map((eachCountry ,i)=> 
     <li className='contact__item' key={i}>
-      <p>{eachCountry.flag} </p>
+      <img className='contact__flags' src={eachCountry.flags.png} alt={eachCountry.name.common} />
       <p className='contact__name'>{eachCountry.name.common}{eachCountry.name.official}</p>
       <p className='contact__phone'>{eachCountry.capital}</p>
       <p className='contact__mail'>{eachCountry.continents}</p>
