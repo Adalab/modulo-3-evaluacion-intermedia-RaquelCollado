@@ -16,16 +16,8 @@ function App() {
 
    const renderCountries = () => {
     return countriesList
-    .filter((eachCountry)=>{
-    eachCountry.name.common.toLowerCase().includes(countrySearch.toLowerCase())})
-    .filter((eachCountry)=> {
-      if(continentSelect === 'All'){
-        return true;
-      }else{ 
-        return eachCountry.continents === continentSelect
-      }
-      }
-    )
+    .filter((eachCountry)=>
+    eachCountry.name.common.toLowerCase().includes(countrySearch.toLowerCase()))
     .map((eachCountry ,i)=> 
     <li className='contact__item' key={i}>
       <p>{eachCountry.flag} </p>
@@ -67,7 +59,8 @@ function App() {
             <select 
               className='header__search'
               type='select'
-              name='continent'
+              name='continents'
+              id='continents'
               placeholder='For continent'
               value= {continentSelect}
               onChange={handleSelect}>
@@ -87,7 +80,9 @@ function App() {
       <main>
         <ul className='contact__list'>
          {renderCountries()}
+        
         </ul>
+        
       </main>
     </div>
   );
